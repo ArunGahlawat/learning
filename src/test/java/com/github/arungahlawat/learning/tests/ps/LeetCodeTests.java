@@ -549,6 +549,20 @@ public class LeetCodeTests {
         arrayUtils.print(input);
     }
 
+    @Test(description = "328 Odd Even Linked List",
+            dataProvider = "OddEvenLinkedListTestData",
+            dataProviderClass = com.github.arungahlawat.learning.tests.ps.dataProviders.ArrayDataProviders.class,
+            groups = {"Linked List", "Odd Even Linked List"})
+    public void convertToOddEvenLinkedList(int[] list) {
+        LinkedList linkedList = new LinkedList(list);
+        System.out.print("List: ");
+        linkedList.print();
+        P_328_OddEvenLinkedList p328OddEvenLinkedList = new P_328_OddEvenLinkedList();
+        ListNode result = p328OddEvenLinkedList.oddEvenList(linkedList.getHead());
+        linkedList.setHead(result);
+        linkedList.print();
+    }
+
     @Test(description = "383. Ransom Note",
             dataProvider = "RansomNoteTestData",
             dataProviderClass = com.github.arungahlawat.learning.tests.ps.dataProviders.ArrayDataProviders.class,
