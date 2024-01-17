@@ -535,6 +535,19 @@ public class LeetCodeTests {
         System.out.printf("Majority element: %d", majorityElement);
     }
 
+    @Test(description = "234 Palindrome Linked List",
+            dataProvider = "PalindromeLinkedListTestData",
+            dataProviderClass = com.github.arungahlawat.learning.tests.ps.dataProviders.ArrayDataProviders.class,
+            groups = {"Linked List", "Palindrome Linked List"})
+    public void checkPalindromeLinkedList(int[] list) {
+        LinkedList linkedList = new LinkedList(list);
+        System.out.print("List: ");
+        linkedList.print();
+        P_234_PalindromeLinkedList p234PalindromeLinkedList = new P_234_PalindromeLinkedList();
+        boolean result = p234PalindromeLinkedList.isPalindrome(linkedList.getHead());
+        System.out.printf("Is Linked List palindrome? %s", result);
+    }
+
     @Test(description = "283 Move Zeros",
             dataProvider = "MoveZerosTestData",
             dataProviderClass = com.github.arungahlawat.learning.tests.ps.dataProviders.ArrayDataProviders.class,
