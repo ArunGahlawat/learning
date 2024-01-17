@@ -95,7 +95,7 @@ public class LeetCodeTests {
         System.out.print("Second list: ");
         secondLinkedList.print();
         P_02_AddTwoNumbers p02AddTwoNumbers = new P_02_AddTwoNumbers();
-        ListNode result = p02AddTwoNumbers.addTwoNumbers(firstLinkedList.getHead(), secondLinkedList.getHead());
+        ListNode result = p02AddTwoNumbers.addTwoNumbersNew(firstLinkedList.getHead(), secondLinkedList.getHead());
         System.out.print("Result list: ");
         LinkedList resultList = new LinkedList();
         resultList.setHead(result);

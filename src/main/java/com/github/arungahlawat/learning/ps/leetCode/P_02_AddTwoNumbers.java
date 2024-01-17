@@ -104,4 +104,21 @@ public class P_02_AddTwoNumbers {
         }
         return dummyHead.next;
     }
+
+    public ListNode addTwoNumbersNew(ListNode l1, ListNode l2) {
+        int carry = 0;
+        ListNode resultHead = new ListNode(0);
+        ListNode resultTail = resultHead;
+        while(l1 != null || l2 != null || carry > 0){
+            int firstDigit = l1 != null ? l1.val : 0;
+            int secondDigit = l2 != null ? l2.val : 0;
+            int realSum = firstDigit + secondDigit + carry;
+            resultTail.next = new ListNode(realSum % 10);
+            carry = realSum / 10;
+            l1 = l1 != null ? l1.next : l1;
+            l2 = l2 != null ? l2.next : l2;
+            resultTail = resultTail.next;
+        }
+        return resultHead.next;
+    }
 }
