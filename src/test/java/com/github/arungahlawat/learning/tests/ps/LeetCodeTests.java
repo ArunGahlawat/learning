@@ -449,6 +449,23 @@ public class LeetCodeTests {
         arrayUtils.print(input, length);
     }
 
+    @Test(description = "61 Rotate List",
+            dataProvider = "RotateListTestData",
+            dataProviderClass = com.github.arungahlawat.learning.tests.ps.dataProviders.ArrayDataProviders.class,
+            groups = {"Linked Lists", "Rotate List"})
+    public void rotateList(int[] list, int k) {
+        LinkedList linkedList = new LinkedList(list);
+        System.out.print("Linked list: ");
+        linkedList.print();
+        System.out.printf("Rotate by: %d\n",k);
+        P_61_RotateList p61RotateList = new P_61_RotateList();
+        ListNode result = p61RotateList.rotateRight(linkedList.getHead(), k);
+        System.out.println("Result list: ");
+        LinkedList resultList = new LinkedList();
+        resultList.setHead(result);
+        resultList.print();
+    }
+
     @Test(description = "80 Remove Duplicates from Sorted Array II",
             dataProvider = "RemoveDuplicatesFromSortedArrayTestData",
             dataProviderClass = com.github.arungahlawat.learning.tests.ps.dataProviders.ArrayDataProviders.class,
